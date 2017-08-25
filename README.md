@@ -8,14 +8,14 @@ Enter the sequence of N bits seperated by commas ','. (Assumed : First element i
 
 Script will generate Twiddle Matrix and DFT for input N bit sequence.
 
-**Sample Input:**
+### **Sample Input:**
 
 Enter the value of N  
 4
 Enter N bit sequence......
 -1,1,-1,1
 
-**Sample Output:**
+### **Sample Output:**
 
 No of discrete bits in input:   4
 
@@ -35,6 +35,7 @@ DFT of the input sequence is :-
 2  (-4+0j)
 3       0j
 
-Requirements:
+
+### **Requirements:**
 1. Python 3.0 or more
 2. Sympy, panda and cmath libraries installed.

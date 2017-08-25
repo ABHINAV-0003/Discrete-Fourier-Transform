@@ -1,5 +1,5 @@
 # Discrete-Fourier-Transform
-Python script for calculating DFT of N bit finite sequence
+## **Python script for calculating DFT of N bit finite sequence.**
 
 This script will help you to calculate Discrete Fourier Transform of N bit finite Sequence .
 
@@ -8,14 +8,14 @@ Enter the sequence of N bits seperated by commas ','. (Assumed : First element i
 
 Script will generate Twiddle Matrix and DFT for input N bit sequence.
 
-Sample Input:
+**Sample Input:**
 
 Enter the value of N  
 4
 Enter N bit sequence......
 -1,1,-1,1
 
-Sample Output:
+**Sample Output:**
 
 No of discrete bits in input:   4
 

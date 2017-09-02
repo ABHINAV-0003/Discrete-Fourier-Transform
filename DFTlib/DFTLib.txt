@@ -1,0 +1,35 @@
+DFTLib - Discrete Signals Python Library
+
+This library provides function for direct calculations on Discrete sequences. Functions are documented below:  
+
+Functions:
+
+wp(N) : This function returns the Twiddle factor whose value is exp(j (2*pi)/ N)
+
+cwp(N): This function returns the conjugate of Twiddle factor whose value is exp(-j (2*pi)/ N)
+
+power(complexno,P) : This function returns the power of complex number raised to P. (Complexno)^P
+
+TM(N,st) :  This function displays the Twiddle Matrix for N bit sequence. 
+	    st is a string which can take 2 values : 
+	    "TM" - for Normal Twiddle Matrix 
+	    "CTM"- For conjugate Twiddle Matrix
+
+DFT(seq) : This function returns Discrete Fourier Transform of a N bit sequence.
+
+IDFT(seq) : This function returns Inverse Discrete Fourier Transform of a N bit sequence.
+
+lcrotate(seq,n) : This function returns the left circularly rotated seq by n bits.
+
+rcrotate(seq,n) : This function returns the right circularly rotated seq by n bits.
+
+circonv(seq1,seq2): This function returns the circular convolution of two discrete sequences.
+
+linconv(seq1,seq2): This function returns the linear convolution of two discrete sequences.
+
+osconv(seq1,seq2): This function returns the step by step explained overlap save convolution of two discrete sequences.
+
+asconv(seq1,seq2): This function returns the step by step explained overlap add convolution of two discrete sequences.
+
+
+

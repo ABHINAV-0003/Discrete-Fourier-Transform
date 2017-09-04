@@ -31,5 +31,6 @@ osconv(seq1,seq2): This function returns the step by step explained overlap save
 
 asconv(seq1,seq2): This function returns the step by step explained overlap add convolution of two discrete sequences.
 
+plot(seq): This function returns a plot of the sequence entered as parameter. Sequence can be real or imaginary and must be 1-Dimentional.
 
 

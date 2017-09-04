@@ -8,33 +8,10 @@ Enter the sequence of N bits seperated by commas ','. (Assumed : First element i
 
 Script will generate Twiddle Matrix and DFT for input N bit sequence.
 
-### **Sample Input:**
+# DFTLib - Discrete Functions and Transforms - Python Library
 
-Enter the value of N  
-4
-Enter N bit sequence......
--1,1,-1,1
-
-### **Sample Output:**
-
-No of discrete bits in input:   4
-
-Twiddle Matrix is :-  
-     0        1    2        3
-0  1.0   (1+0j)  1.0   (1+0j)
-1  1.0  (-0-1j) -1.0       1j
-2  1.0  (-1+0j)  1.0  (-1+0j)
-3  1.0       1j -1.0  (-0-1j)
-
-Input sequence is : [-1, 1, -1, 1]
-
-DFT of the input sequence is :- 
-         0
-0       0j
-1       0j
-2  (-4+0j)
-3       0j
-
+This Repository also includes DFTlib that has all the basic functions which are generally performed on Discrete Sequences. 
+Download the Library. Import it in your project to access any function of the library in your project.
 
 ### **Requirements:**
 1. Python 3.0 or more

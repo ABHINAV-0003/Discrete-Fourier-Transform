@@ -7,6 +7,7 @@ Created on Thu Aug 31 23:12:30 2017
 
 from sympy import *
 from pandas import *
+from pylab import *
 import cmath
 import math
 
@@ -23,7 +24,21 @@ def power(a,p):
     else:
         temp=realtemp+1j*imgtemp
         return (temp)
+
+def plot(seq):
+    length=len(seq)
+    cseq=[]
+    seqtransform=[]
+    for i in range(length):
+        treal=seq[i].real
+        timag=seq[i].imag
+        t=math.sqrt(treal**2 + timag**2)
+        seqtransform.append(t)
+        cseq.append(i)
     
+    markerline, stemlines, baseline = stem(cseq,seqtransform, '-.')
+    
+    show()
     
 def wp(N):
     
@@ -84,6 +99,7 @@ def DFT(seq):
         for i in range(N):
             temp=temp+(seq[i]*matrix[j][i])
         multiply.append(temp)
+    plot(multiply)
     return DataFrame(multiply)
 
 def DFTcoder(seq):
@@ -117,6 +133,7 @@ def IDFT(seq):
         for i in range(N):
             temp=temp+(seq[i]*matrix[j][i])
         multiply.append(temp/N)
+    plot(multiply)
     return DataFrame(multiply)
 
 def circonv(seq1,seq2):
@@ -139,6 +156,12 @@ def circonv(seq1,seq2):
         idftmatrix.append(dftseq1[i]*dftseq2[i])
     
     retmatrix=IDFTcoder(idftmatrix)
+    print("Seq 1")
+    plot(seq1)
+    print("Seq 2")
+    plot(seq2)
+    print("Circular Convolution")
+    plot(retmatrix)
     return DataFrame(retmatrix)
 
 def lcrotate(l, n):
@@ -171,7 +194,12 @@ def linconv(seq1,seq2):
         for j in range(L):
             temp=temp+matrix[i][j]*seq2[j]
         finalmat.append(temp)
-        
+    print("Seq 1")
+    plot(seq1)
+    print("Seq 2")
+    plot(seq2)
+    print("Linear Convolution")
+    plot(finalmat)   
     return DataFrame(finalmat)
 
 
@@ -238,7 +266,14 @@ def osconv(seq1,seq2):
         omat=convos(matrix,seq2)
         print("Convolved vectors before overlaping")
         print(DataFrame(omat))
-        return(overlap(omat,N2))
+        done=overlap(omat,N2)
+        print("Seq 1")
+        plot(seq1)
+        print("Seq 2")
+        plot(seq2)
+        print("Overlap Save  Convolution")
+        plot(done)
+        return done
     else:
         matrix=blocks(seq2,seq1)
         print("Blocks")
@@ -252,7 +287,14 @@ def osconv(seq1,seq2):
         print("Convolved vectors before overlaping")
         print(DataFrame(omat))
         print("Overlaped and convolved output")
-        return (overlap(omat,N1))
+        done=overlap(omat,N1)
+        print("Seq 1")
+        plot(seq1)
+        print("Seq 2")
+        plot(seq2)
+        print("Overlap Save  Convolution")
+        plot(done)
+        return done
         
     
 
@@ -321,7 +363,14 @@ def oaconv(seq1,seq2):
         print("After Convolution")
         print(DataFrame(mat))
         print("Added and Convolved..")
-        return add(mat,N2)
+        done=add(mat,N2)
+        print("Seq 1")
+        plot(seq1)
+        print("Seq 2")
+        plot(seq2)
+        print("Overlap Add Convolution")
+        plot(done)
+        return done
     else:
         matrix=blocks_add(seq2,seq1)
         print("Blocks")
@@ -333,7 +382,14 @@ def oaconv(seq1,seq2):
         print("After Convolution")
         print(DataFrame(mat))
         print("Added and Convolved..")
-        return add(mat,N1)
+        done=add(mat,N1)
+        print("Seq 1")
+        plot(seq1)
+        print("Seq 2")
+        plot(seq2)
+        print("Overlap Add Convolution")
+        plot(done)
+        return done
         
 def add(mat,N2):
     L=len(mat)
@@ -355,7 +411,7 @@ def add(mat,N2):
     return linmat  
 
 if __name__ == '__main__':
-    # write your code here
+    pass
     
     
     
